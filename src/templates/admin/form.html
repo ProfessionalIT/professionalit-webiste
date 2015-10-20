@@ -1,0 +1,21 @@
+$def with (titulo, action, method, form, verbo, display_message)
+<h1>$titulo</h1>
+<div class="painel_form">
+    <span class="show_message">$:display_message</span>
+    <h2><span class="titulo">Dados do Registro</span></h2>
+    <form action="$action" method="$method" name="operation_form" id="operation_form">
+        $:form.render()
+        <span class="operations_field">Operações:</span>
+        $if verbo == 'editar':
+            <button type="submit" id="excluir_button" name="excluir_button" onclick="return setMode('delete');">Excluir</button>
+            <button type="submit" id="salvar_button" name="salvar_button" onclick="return setMode('save');">Salvar</button>
+        <button type="submit" id="salvar_sair_button" name="salvar_sair_button" onclick="return setMode('save_exit');">Salvar e Sair</button>
+    </form>
+</div>
+<script language="javascript" type="text/javascript">
+    function setMode(mode){
+        document.operation_form.operation.value=mode;
+        if (mode == 'delete'){ if (confirm('Deseja Realmente excluir o registro ?')) { return true; } else { return false; } } else { return true; }
+    }
+</script>
+

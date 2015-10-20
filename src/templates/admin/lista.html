@@ -1,0 +1,51 @@
+$def with (form, filtro, pagination, display_message)
+
+<h2 class="form_title"><img src="$pagination.icon_file" class="icon_menu" alt="$pagination.table_name" title="$pagination.table_name" />$pagination.table_name</h2>
+<form name="pesquisa" action="/admin/listar/$pagination.classe_name" method="POST">
+    <fieldset>
+        <legend class="alignLeft">Filtro de Registros:</legend>
+        $:form.render_css()
+    </fieldset>
+</form>
+<div class="painel">
+    <span class="show_message">$:display_message</span>
+    $if filtro:
+        <h2 class="margin05px"><span class="titulo">Listagem de Registros</span><span class="filtro">$filtro</span></h2>
+    $else:
+        <h2 class="margin05px"><span class="titulo">Listagem de Registros</span></h2>
+    <p id="painel_new_record"><span class="button"><a href="/admin/inserir/$pagination.classe_name" title="Incluir novo registro.">Incluir Registo</a></span></p>
+    <table cellspacing="0" cellpadding="0" id="list">
+        <thead>
+            <tr>
+                <th>Código</th>
+                $for colunm in pagination.exposed_attributes['colunms']:
+                    <th>$colunm</th>
+            </tr>
+        </thead>
+        <tbody>
+            $for record in pagination.records:
+            <tr>
+                <td><a href="/admin/editar/$pagination.classe_name/$record.key().id()" title="Editar o Registro.">$record.key().id()</a></td>
+                $for field in pagination.exposed_attributes['fields']:
+                    <td>$:record.get_field_value(field)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="panel_records">
+$if pagination.prev_page:
+    <a href="/admin/listar/$pagination.classe_name?page=$pagination.prev_page&size=$pagination.pagesize&q=$pagination.query" title="Página Anterior."><img src="/static/images/back.png" alt="Página Anterior." title="Página Anterior." /></a>
+
+$if not pagination.prev_page and not pagination.next_page and pagination.total_records > 0:
+    <span>Mostrando de 1 à $pagination.record_counts registros.</span>
+$elif pagination.total_records == 0:
+    <span>Sem Registros.</span>
+$else:
+    $if (int(pagination.pagesize) + int(pagination.start)) > int(pagination.total_records):
+        <span>Mostrando registros de ${int(pagination.start) + 1} à ${int(pagination.total_records)}.</span>
+    $else:
+        <span>Mostrando registros de ${int(pagination.start) + 1} à ${int(pagination.pagesize) + int(pagination.start)} no total de $pagination.total_records registros.</span>
+
+$if pagination.next_page:
+    <a href="/admin/listar/$pagination.classe_name?page=$pagination.next_page&size=$pagination.pagesize&q=$pagination.query" title="Próxima Página."><img src="/static/images/forward.png" alt="Próxima Página." title="Próxima Página." /></a>
+</div>

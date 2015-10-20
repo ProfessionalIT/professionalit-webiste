@@ -1,0 +1,26 @@
+application: professionalit-1098
+version: 1
+api_version: 1
+runtime: python27
+threadsafe: true
+
+handlers:
+
+- url: /static/css/(.*)
+  static_files: static/css/\1
+  upload: static/css/(.*)
+  secure: optional
+
+- url: /static/images/(.*)
+  static_files: static/images/\1
+  upload: static/images/(.*)
+  secure: optional
+
+- url: /static/javascript/(.*)
+  static_files: static/javascript/\1
+  upload: static/javascript/(.*)
+  secure: optional
+  
+- url: /.*
+  script: code.app  
+  secure: optional

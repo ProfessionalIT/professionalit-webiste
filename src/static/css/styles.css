@@ -1,0 +1,24 @@
+* { background-color: #000; color: white; font-family: 'Trebuchet MS'; text-align: center;}
+img { margin: 0px auto; border: 0px; border: none; }
+h1 { margin: 0px auto; margin-top: -25px; margin-bottom: 30px;}
+ul { list-style: none; }
+ul li { display: inline; padding: 20px;}
+li a { color: #F6943F; font-size: 30px; font-weight: bold; text-decoration: none; }
+li a:hover { color: white; }
+#contact_panel { margin-top: 40px; }
+#contact_panel a { font-weight: bold; text-decoration: none; }
+#contact_panel a:hover { color: #ADD8E6; }
+#contact_panel p { font-size: 22px; font-weight: bold; }
+#contact_panel table td { text-align: center; padding-left: 20px; vertical-align: bottom; }
+#contact_panel table tr td { padding: 10px; }
+#form_panel { margin: 0px auto; }
+#form_panel h4 { color: orange; font-size: 22px; font-weight: bold; }
+#form_panel input, #form_panel textarea { text-align: left; background-color: #eee; color: black; }
+#form_panel input:focus, #form_panel textarea:focus { border: 02px solid #ccc; background-color: #F4F499; }
+#form_panel table th { vertical-align: top; }
+#form_panel table tr td, #form_panel table tr th { padding: 05px; }
+#form_panel button { font-weight: bold; padding: 5px; width: 200px; }
+table { margin: 0px auto; }
+#footer p { color: orange; font-weight: bold; }
+#footer p a { text-decoration: none; color: #eee; }
+#footer p a:hover { color: #ADD8E6; }

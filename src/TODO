@@ -1,0 +1,35 @@
+=========================================== TODO ===========================================
+OK    01 - Pagination Class. (Rever implementação que esta com bug).
+02 - Implement Session.
+03 - Implement Cache com Memcached.
+04 - Implement Ajax.
+05 - Implement Logging.
+06 - Create a 404 page.
+07 - Implement page with Tabs. Desenvolver render() personalizado para form com tabs (complex forms)
+08 - Internacionalization.
+09 - LOG - Implementar log personalizado, através de criação de tabela específica).
+10 - Validação de Campos (tipo de dados permitido por campo)(JQuery Mask) Ver validação de CEP, CPF, CNPJ, Data, Telefone.
+11 - Implementar compactação de CSS e Javascript.
+12 - Implementar otimização de imagens do site e do manager.
+13 - Implementar onfocus, onblur via javascript, muda de cor background do campo, copiar cores do publicador.
+14 - Filters. Rever os critérios utilizados nas telas de listagem/filtro.
+15 - Order - Implementar Ordenação nas colunas.
+16 - Flash Message para mostrar para o usuário o status das transações (Ao inserir, excluir e alterar).
+17 - Rever CSS das tables html (ver layout que foi montado).
+18 - Ao abrir um form, posiciona no primeiro campo da tela.
+19 - Bug na URL do Admin (Ver AddProcessor)
+OK 20 - Bug nos Titulos de Listagens e Forms que não estão permitindo caracteres acentudados.
+21 - Bug nas propriedades em combox que possuem acento. (Não).
+22 - Implementar as Validações e Regras de negócio em eventos onblur().
+23 - Rever mecanismo de campos COMBOBOX (transformar pesquisa em busca feita por AJAX no estilo SCC)
+24 - Implementar politica de usuarios, grupos e permissões.
+25 - Auto-preenchimento das datas de criação e data de atualização.
+26 - Formatação de data e campos moeda/percentagem no formato brasileiro em listagens e formulários.
+27 - Para implementações não Google APPs ver possibilidade de utilizar SQLAlchemy/SQLObject e Fabric.
+28 - Criar o campo tipo de página:
+	Estática
+	Listagem/com componente consulta ao banco de dados
+	Galeria de fotos
+	Galeria de vídeos
+29 - Implementar o Try Except em métodos criticos como o save e o delete.
+
